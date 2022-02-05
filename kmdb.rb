@@ -26,6 +26,7 @@
 # - Insert the "Batman" sample data using ruby code. Do not use hard-coded ids and
 #   delete any existing data beforehand so that each run of this script does not
 #   create duplicate data. (5 points)
+
 # - Query the data and loop through it to display output similar to the following
 #   sample "report". (10 points)
 
@@ -69,6 +70,9 @@
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
 # TODO!
+Movie.destroy_all
+Person.destroy_all
+Role.destroy_all
 
 # Generate models and tables, according to the domain model
 # TODO!
@@ -77,6 +81,129 @@
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
+#Define Movies 
+
+movie1 = Movie.new
+movie1.title = "Batman Begins"
+movie1.year_released = "2005"
+movie1.rated = "PG-13"
+movie1.person_id =
+movie1.save
+
+movie2 = Movie.new
+movie2.title = "The Dark Knight"
+movie2.year_released = "2008"
+movie2.rated = "PG-13"
+movie2.person_id =
+movie2.save
+
+movie3 = Movie.new
+movie3.title = "The Dark Knight Rises"
+movie3.year_released = "2012"
+movie3.rated = "PG-13"
+movie3.person_id =
+movie3.save
+
+#Define People
+
+person1 = Person.new
+person1.name = "Christian Bale"  
+
+person2 = Person.new
+person2.name = "Michael Caine"  
+
+person3 = Person.new
+person3.name = "Liam Neeson"
+
+person4 = Person.new
+person4.name = "Katie Holmes"
+
+person5 = Person.new
+person5.name = "Gary Oldman"
+
+person6 = Person.new
+person6.name = "Heath Ledger"
+
+person7 = Person.new
+person7.name = "Aaron Eckhart"
+
+person8 = Person.new
+person8.name = "Maggie Gyllenhaal"
+
+person9 = Person.new
+person9.name = "Tom Hardy"
+
+person10 = Person.new
+person10.name = "Joseph Gordon-Levitt"
+
+person11 = Person.new
+person11.name = "Anne Hathaway"
+
+person12 = Person.new
+person12.name = "Christopher Nolan"
+
+#Define Roles
+role1 = Role.new
+role1.movie_id = movie.id
+role1.person_id = person.id
+role1.character_name = "Bruce Wayne"
+
+role2 = Role.new
+role2.movie_id = movie.id
+role2.person_id = person.id
+role2.character_name = "Alfred"
+
+role3 = Role.new
+role3.movie_id = movie.id
+role3.person_id = person.id
+role3.character_name = "Ra's Al Ghul"
+
+role3 = Role.new
+role3.movie_id = movie.id
+role3.person_id = person.id
+role3.character_name = "Bruce Wayne"
+
+role4 = Role.new
+role4.movie_id = movie.id
+role4.person_id = person.id
+role4.character_name = "Rachel Dawes"
+
+role5 = Role.new
+role5.movie_id = movie.id
+role5.person_id = person.id
+role5.character_name = "Commissioner Gordon"
+
+role6 = Role.new
+role6.movie_id = movie.id
+role6.person_id = person.id
+role6.character_name = "Bruce Wayne"
+
+role7 = Role.new
+role7.movie_id = movie.id
+role7.person_id = person.id
+role7.character_name = "Joker"
+
+role8 = Role.new
+role8.movie_id = movie.id
+role8.person_id = person.id
+role8.character_name = "Harvey Dent"
+
+role9 = Role.new
+role9.movie_id = movie.id
+role9.person_id = person.id
+role9.character_name = "Bane"
+
+role10 = Role.new
+role10.movie_id = movie.id
+role10.person_id = person.id
+role10.character_name = "John Blake"
+
+role11 = Role.new
+role11.movie_id = movie.id
+role11.person_id = person.id
+role11.character_name = "Selina Kyle"
+
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
@@ -84,6 +211,8 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output
 # TODO!
+
+
 
 # Prints a header for the cast output
 puts ""
