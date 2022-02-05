@@ -192,20 +192,25 @@ role10 = Role.new
 role10.character_name = "Selina Kyle"
 role10.save
 
+role11 = Role.new
+role11.character_name = "Director"
+role11.save
+
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
 puts ""
 
-movies = Movie.all
-for movie in movies
-    puts "#{movie.title} #{movie.year_released} #{movie.rated}"
-end 
-
 # Query the movies data and loop through the results to display the movies output
 # TODO!
 
+director = Person.where(name: "Christopher Nolan")[0]
 
+movies = Movie.all
+for movie in movies
+    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{director.name}" 
+end 
 
 # Prints a header for the cast output
 puts ""
@@ -215,3 +220,11 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
+
+roles = Role.all
+ 
+
+for role in roles
+    role = people.role
+    puts "#{people.name}"
+end
