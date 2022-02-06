@@ -156,7 +156,6 @@ batman3.save
 
 #person_id = christian_bale.id  
 
-
 #Define Roles
 bruce_wayne = Role.new
 bruce_wayne.character_name = "Bruce Wayne"
@@ -257,11 +256,11 @@ puts ""
 # Query the movies data and loop through the results to display the movies output
 # TODO!
 
-director = Person.where({name: "Christopher Nolan"})[0]
 
 movies = Movie.all
 for movie in movies
-    puts "#{movie.title} #{movie.year_released} #{movie.rated}" People.where({id: movie.people_id})[0]
+    director = Person.where({id: movie.person_id})[0]
+    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{director.name}"
 end 
 
 # Prints a header for the cast output
@@ -276,7 +275,9 @@ puts ""
 roles = Role.all
 
 for role in roles 
-   puts "#{role.character_name}"
-
+   
+    role_person = Person.where({id: role.person_id})[0]
+    movie_role = Movie.where({id: role.movie_id})[0]
+    puts " #{movie_role.title} #{role_person.name} #{role.character_name} "
 
 end 
